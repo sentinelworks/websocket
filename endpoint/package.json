@@ -1,0 +1,29 @@
+{
+  "name": "GMP proxy in the cloud",
+  "version": "1.0.0",
+  "description": "This is the application for GMP, which connect to GMA",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vzhang2008/gmp.git"
+  },
+  "author": "Victor Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vzhang2008/gmp/issues"
+  },
+  "homepage": "https://github.com/vzhang2008/gmp",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.4.1",
+    "bcrypt": "^0.8.5",
+    "mongoose": "^4.3.4",
+    "shortid": "^2.2.4"
+  }
+}
