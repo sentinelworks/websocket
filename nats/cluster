@@ -1,0 +1,28 @@
+docker run -d -p 4222:4222 -p 6222:6222 -p 8222:8222 --name nats-main nats
+
+docker run -d --name=nats-2 --link nats-main nats --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222
+
+# Routes are protected, so need to use them with --routes flag
+# e.g. --routes=nats-route://ruser:T0pS3cr3t@otherdockerhost:6222
+authorization {
+  user: ruser
+  password: T0pS3cr3t
+  timeout: 2
+}
+
+
+docker run -d --name=nats-2 --link nats-main nats --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222 -DV
+
+go to /auto/home.nas03/vzhang/workspace/nats
+
+docker run -it -p 0.0.0.0:7222:7222 -p 0.0.0.0:7244:7244 --rm -v $(pwd)/conf/nats-server-A.conf:/tmp/cluster.conf nats -c /tmp/cluster.conf -p 7222 -D -V
+docker run -it -p 0.0.0.0:8222:8222 -p 0.0.0.0:7246:7246 --rm -v $(pwd)/conf/nats-server-B.conf:/tmp/cluster.conf nats -c /tmp/cluster.conf -p 8222 -D -V
+docker run -it -p 0.0.0.0:9222:9222 -p 0.0.0.0:7248:7248 --rm -v $(pwd)/conf/nats-server-C.conf:/tmp/cluster.conf nats -c /tmp/cluster.conf -p 9222 -D -V
+
+
+NATS protocol:
+
+doing cluster test:
+
+nats-sub -s "nats://0.0.0.0:7222" hello
+nats-pub -s "nats://0.0.0.0:8222" hello world

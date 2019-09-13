@@ -1,0 +1,3 @@
+nats-sub -s "nats://192.168.59.103:7222" victor
+
+nats-pub -s "nats://10.235.13.176:7222" victor hello world

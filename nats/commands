@@ -1,0 +1,9 @@
+docker pull nats:latest
+
+docker run -p 4222:4222 -ti nats:latest
+
+
+kubectl apply -f https://github.com/nats-io/nats-operator/releases/download/v0.6.0/00-prereqs.yaml
+
+kubectl apply -f https://github.com/nats-io/nats-operator/releases/download/v0.6.0/10-deployment.yaml
+

@@ -1,0 +1,5 @@
+server=nats://0.0.0.0:8222
+msg=blablabla
+msg=$msg+$1
+echo publish at $server: $msg
+nats-pub -s $server nimble $msg

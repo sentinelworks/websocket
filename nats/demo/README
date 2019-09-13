@@ -1,0 +1,4 @@
+steps to do the test
+1. start 3 servers
+2. start client1 to subscribe message
+3. start client2 to publish message

@@ -1,0 +1,4 @@
+lsmod|grep 8021q
+
+modprobe 8021q
+modinfo 8021q

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/sbin/ip link show |wc
+
+
