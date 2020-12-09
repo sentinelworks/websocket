@@ -1,0 +1,37 @@
+syntax = "proto3";
+option go_package = ".;graphvm";
+
+package graphvm;
+
+message AddRequest{
+  repeated string data = 1;
+}
+
+message AddResponse {
+  int32 gid = 1;
+}
+
+message DeleteRequest{
+  int32 gid = 1;
+}
+
+message DeleteResponse {
+  int32 result = 1;
+}
+
+message QueryRequest{
+  int32  gid = 1;
+  string first = 2;
+  string second = 3;
+}
+
+message QueryResponse {
+  int32 distance = 1 ;
+}
+
+service Graphvm {
+  rpc Add(AddRequest) returns (AddResponse){};
+  rpc Delete(DeleteRequest) returns (DeleteResponse){};
+  rpc Query(QueryRequest) returns (QueryResponse){};
+}
+

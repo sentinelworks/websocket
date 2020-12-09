@@ -1,0 +1,26 @@
+In this exercise, we would like to understand your ability to work with network 
+interfaces and data structures, as well as best practices and code structure in 
+a golang program.
+
+Problem statement: Networked systems and the graph data structure are two 
+fundamental building blocks of our current interconnected software landscape.  
+Using golang tools and libraries of your choice, create an implementation of a
+network service that can accept a description of an undirected non-weighted
+graph and return various properties about the graph over a gRPC interface.
+The server should support more than one client connecting at the same time.
+
+Operations that the server should support:
+
+- Post a graph, returning an ID to be used in subsequent operations
+- Get the shortest path between two vertices in a previously posted graph
+- Delete a graph from the server
+
+ 
+
+Guidance for this exercise:
+
+- You must use gRPC/protobuf tools to define the server interface
+- You must include at least one unit, one functional, and one performance test case
+- The server should deal with concurrent operations or restrict parallelism in some way 
+- You may use open source components to assist in the implementation of the server logic, including graph libraries and testing frameworks
+- You must include instructions for how to run the client and server, and a sample output for your test cases
