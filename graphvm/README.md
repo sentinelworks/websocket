@@ -1,4 +1,4 @@
-
+<pre>
 Prequiste: You must install go, grpc, protobuf3.  To verify, make helloworld example work.  Move graphvm under $GOPATH/src/google.golang.org/grpc/examples
 
 The design point:
@@ -129,4 +129,4 @@ victor@johnson:~/go/src/google.golang.org/grpc/examples/graphvm$ tree .
     └── graphvm.go
 
 4 directories, 11 files
-
+</pre>
